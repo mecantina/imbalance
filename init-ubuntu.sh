@@ -19,6 +19,10 @@ echo "Updating linux packages..."
 sudo apt -y update 
 sudo apt -y upgrade
 #
+# Install eccodes
+#
+apt-get install -y libeccodes-dev gcc
+#
 # Install miniconda
 #
 if [ ! -d ~/miniconda3 ]; then
@@ -44,3 +48,4 @@ sudo apt install x11-apps
 #
 wget "${downloadUrlBase}/python-libraries.txt"
 ~/miniconda3/bin/pip install -r python-libraries.txt
+
