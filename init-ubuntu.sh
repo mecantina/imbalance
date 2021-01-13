@@ -31,4 +31,4 @@ fi
 # Installing python libraries
 #
 wget "${downloadUrlBase}/python-libraries.txt"
-~/miniconda/bin/pip install -r requirements.txt
+~/miniconda3/bin/pip install -r requirements.txt
