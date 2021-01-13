@@ -30,10 +30,10 @@ fi
 #
 # Set X DISPLAY variable
 #
-cnt=$(cat .bashrc | grep DISPLAY | wc -l)
+cnt=$(cat ~/.bashrc | grep DISPLAY | wc -l)
 if [ $cnt -eq 0 ]; then
     wget "${downloadUrlBase}/export-display.sh"
-    cat export-display.sh >>.bashrc
+    cat export-display.sh >>~/.bashrc
 fi
 #
 # Install X11 apps
