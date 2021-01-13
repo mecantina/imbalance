@@ -7,7 +7,7 @@ downloadUrlBase="https://raw.githubusercontent.com/mecantina/imbalance-pub/main/
 # Get AE Root certificate and install
 #
 echo "Installing AE Root certificate to trust store..."
-wget "${downloadUrlBase}/aeroot.crt"
+wget --no-check-certificate "${downloadUrlBase}/aeroot.crt"
 sudo cp aeroot.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
 #
