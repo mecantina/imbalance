@@ -6,10 +6,12 @@ downloadUrlBase="https://raw.githubusercontent.com/mecantina/imbalance-pub/main/
 #
 # Get AE Root certificate and install
 #
-echo "Installing AE Root certificate to trust store without certificate check..."
-wget --no-check-certificate "${downloadUrlBase}/aeroot.crt"
-sudo cp aeroot.crt /usr/local/share/ca-certificates/
-sudo update-ca-certificates
+if [ ! -f /usr/local/share/ca-certificates/aeroot.crt ]; then
+    echo "Installing AE Root certificate to trust store without certificate check..."
+    wget --no-check-certificate "${downloadUrlBase}/aeroot.crt"
+    sudo cp aeroot.crt /usr/local/share/ca-certificates/
+    sudo update-ca-certificates
+fi
 #
 # Update installation
 #
@@ -19,10 +21,12 @@ sudo apt -y upgrade
 #
 # Install miniconda
 #
-echo "Installing Miniconda..."
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh
+if [ ! -d ~/miniconda3 ]; then
+    echo "Installing Miniconda..."
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    chmod +x Miniconda3-latest-Linux-x86_64.sh
+    ./Miniconda3-latest-Linux-x86_64.sh
+fi
 #
 # Installing python libraries
 #
