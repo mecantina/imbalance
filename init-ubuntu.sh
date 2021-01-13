@@ -42,7 +42,7 @@ fi
 #
 # Install X11 apps
 #
-sudo apt install x11-apps
+sudo apt install -y x11-apps
 #
 # Installing python libraries
 #
