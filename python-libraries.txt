@@ -1,1 +1,4 @@
 azure-storage-blob
+azure-identity
+azure-keyvault-administration
+azure-keyvault-secrets

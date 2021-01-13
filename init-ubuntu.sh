@@ -27,4 +27,4 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 # Installing python libraries
 #
 wget "${downloadUrlBase}/python-libraries.txt"
-pip install -r requirements.txt
+~/miniconda/bin/pip install -r requirements.txt
