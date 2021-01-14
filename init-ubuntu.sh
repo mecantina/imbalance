@@ -26,7 +26,7 @@ sudo apt -y upgrade
 #
 # Install eccodes, x11-apps
 #
-apt-get install -y libeccodes-dev gcc x11-apps
+sudo apt-get install -y libeccodes-dev gcc x11-apps
 #
 # Install miniconda
 #
@@ -66,3 +66,5 @@ if [ ! -f "/usr/bin/az" ]; then
     echo "*****************************************************************************************"
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 fi
+
+
