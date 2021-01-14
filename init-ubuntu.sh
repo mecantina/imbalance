@@ -60,7 +60,9 @@ wget "${downloadUrlBase}/python-libraries.txt"
 #
 # Install the Azure CLI
 #
-echo "*****************************************************************************************"
-echo "* Installing the Azure CLI...                                                           *"
-echo "*****************************************************************************************"
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+if [ ! -f "/usr/bin/az" ]; then
+    echo "*****************************************************************************************"
+    echo "* Installing the Azure CLI...                                                           *"
+    echo "*****************************************************************************************"
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+fi

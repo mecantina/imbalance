@@ -6,3 +6,4 @@ eccodes
 azure-functions
 pyproj
 pygrib
+python-dotenv
