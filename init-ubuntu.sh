@@ -21,6 +21,7 @@ fi
 cnt=$(cat ~/.bashrc | grep REQUESTS_CA_BUNDLE | wc -l)
 if [ $cnt -eq 0 ]; then
     echo "export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt" >>~/.bashrc
+    export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 fi
 #
 # Update installation
