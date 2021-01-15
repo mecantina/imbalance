@@ -36,6 +36,26 @@ sudo apt -y upgrade
 #
 sudo apt-get install -y libeccodes-dev gcc x11-apps
 #
+# Config GIT
+#
+if [ ! -f ~/.my-credentials ]; then
+    echo "*****************************************************************************************"
+    echo "* Configuring git...                                                                    *"
+    echo "*****************************************************************************************"
+    git config --global user.name "Imbalance Developer"
+    git config --global user.email imbalance.developer@ae.no
+    git config --global credential.helper 'store --file ~/.my-credentials'
+fi
+#
+# Create source folder
+#
+if [ ! -d ~/source ]; then
+    echo "*****************************************************************************************"
+    echo "* Creating source folder...                                                             *"
+    echo "*****************************************************************************************"
+    mkdir ~/source
+fi
+#
 # Install the Azure CLI
 #
 if [ ! -f "/usr/bin/az" ]; then
