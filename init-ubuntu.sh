@@ -36,15 +36,13 @@ sudo apt -y upgrade
 #
 sudo apt-get install -y libeccodes-dev gcc x11-apps
 #
-# Install miniconda
+# Install the Azure CLI
 #
-if [ ! -d ~/miniconda3 ]; then
+if [ ! -f "/usr/bin/az" ]; then
     echo "*****************************************************************************************"
-    echo "* Installing Miniconda...                                                               *"
+    echo "* Installing the Azure CLI...                                                           *"
     echo "*****************************************************************************************"
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 fi
 #
 # Set X DISPLAY variable
@@ -56,6 +54,18 @@ if [ $cnt -eq 0 ]; then
     echo "*****************************************************************************************"
     wget "${downloadUrlBase}/export-display.sh"
     cat export-display.sh >>~/.bashrc
+    export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+fi
+#
+# Install miniconda
+#
+if [ ! -d ~/miniconda3 ]; then
+    echo "*****************************************************************************************"
+    echo "* Installing Miniconda...                                                               *"
+    echo "*****************************************************************************************"
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    chmod +x Miniconda3-latest-Linux-x86_64.sh
+    ./Miniconda3-latest-Linux-x86_64.sh
 fi
 #
 # Installing python libraries
@@ -64,16 +74,4 @@ echo "**************************************************************************
 echo "* Installing python libraries...                                                        *"
 echo "*****************************************************************************************"
 wget "${downloadUrlBase}/python-libraries.txt"
-#~/miniconda3/bin/pip install -r python-libraries.txt
 /home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
-#
-# Install the Azure CLI
-#
-if [ ! -f "/usr/bin/az" ]; then
-    echo "*****************************************************************************************"
-    echo "* Installing the Azure CLI...                                                           *"
-    echo "*****************************************************************************************"
-    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-fi
-
-
