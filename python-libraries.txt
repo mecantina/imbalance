@@ -1,10 +1,8 @@
 azure-storage-blob
 azure-storage-file-datalake
 azure-identity
-azure-keyvault-administration
 azure-keyvault-secrets
-eccodes
-azure-functions
+python-eccodes
 pyproj
 pygrib
 python-dotenv

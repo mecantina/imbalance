@@ -16,6 +16,13 @@ if [ ! -f /usr/local/share/ca-certificates/aeroot.crt ]; then
     sudo update-ca-certificates
 fi
 #
+# Make python requests use the system ca-certificates bundle 
+#
+cnt=$(cat ~/.bashrc | grep REQUESTS_CA_BUNDLE | wc -l)
+if [ $cnt -eq 0 ]; then
+    echo "export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt" >>~/.bashrc
+fi
+#
 # Update installation
 #
 echo "*****************************************************************************************"
@@ -56,7 +63,8 @@ echo "**************************************************************************
 echo "* Installing python libraries...                                                        *"
 echo "*****************************************************************************************"
 wget "${downloadUrlBase}/python-libraries.txt"
-~/miniconda3/bin/pip install -r python-libraries.txt
+#~/miniconda3/bin/pip install -r python-libraries.txt
+/home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
 #
 # Install the Azure CLI
 #
