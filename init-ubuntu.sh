@@ -34,7 +34,7 @@ sudo apt -y upgrade
 #
 # Install eccodes, x11-apps
 #
-sudo apt-get install -y libeccodes-dev gcc x11-apps
+sudo apt-get install -y libeccodes-dev gcc x11-apps make
 #
 # Config GIT
 #
