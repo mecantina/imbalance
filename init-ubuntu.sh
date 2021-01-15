@@ -28,16 +28,9 @@ sudo apt -y upgrade
 #
 sudo apt-get install -y libeccodes-dev gcc x11-apps
 #
-# Install miniconda
+# Install Python
 #
-if [ ! -d ~/miniconda3 ]; then
-    echo "*****************************************************************************************"
-    echo "* Installing Miniconda...                                                               *"
-    echo "*****************************************************************************************"
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh
-fi
+
 #
 # Set X DISPLAY variable
 #
