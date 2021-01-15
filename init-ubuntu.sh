@@ -1,8 +1,9 @@
 #!/bin/bash
 #
 # Initialize an Ubuntu WLS 2 installation for the Imbalance project
-# Script written to be rerunnable
+# Script written to be rerunnablecd
 #
+cd ~
 downloadUrlBase="https://raw.githubusercontent.com/mecantina/imbalance-pub/main/"
 #
 # Get AE Root certificate and install
@@ -34,7 +35,7 @@ sudo apt -y upgrade
 #
 # Install eccodes, x11-apps
 #
-sudo apt-get install -y libeccodes-dev gcc x11-apps make
+sudo apt-get install -y libeccodes-dev gcc x11-apps make python3-pip xterm
 #
 # Config GIT
 #
@@ -76,17 +77,7 @@ if [ $cnt -eq 0 ]; then
     cat export-display.sh >>~/.bashrc
     export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 fi
-#
-# Install miniconda
-#
-if [ ! -d ~/miniconda3 ]; then
-    echo "*****************************************************************************************"
-    echo "* Installing Miniconda...                                                               *"
-    echo "*****************************************************************************************"
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh
-fi
+
 #
 # Installing python libraries
 #
@@ -94,4 +85,11 @@ echo "**************************************************************************
 echo "* Installing python libraries...                                                        *"
 echo "*****************************************************************************************"
 wget "${downloadUrlBase}/python-libraries.txt"
-/home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
+#/home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
+pip3 install -r ~/python-libraries.txt
+#
+# Download the Install Miniconda file
+#
+rm install-miniconda.sh 2>/dev/null
+wget "${downloadUrlBase}/install-miniconda.sh"
+chmod +x install-miniconda.sh
