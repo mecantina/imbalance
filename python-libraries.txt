@@ -6,3 +6,5 @@ eccodes
 pyproj
 pygrib
 python-dotenv
+matplotlib
+pandas
