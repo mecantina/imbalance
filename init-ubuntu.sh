@@ -35,7 +35,7 @@ sudo apt -y upgrade
 #
 # Install eccodes, x11-apps
 #
-sudo apt-get install -y libeccodes-dev gcc x11-apps make python3-pip xterm python3-tk libeccodes-tools cmake
+sudo apt-get install -y libeccodes-dev gcc x11-apps make python3-pip xterm python3-tk libeccodes-tools cmake gfortran
 #
 # Config GIT
 #
