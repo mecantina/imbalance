@@ -48,4 +48,6 @@ if [ $COUNT -eq 0 ]; then
     export PATH=~/eccodes-${VERSION}/bin:$PATH
     export ECCODES_DIR=~/eccodes-${VERSION}
 fi
+echo "Deleting source..."
+rm -Rf ~/${ECCODES}-source
 echo "Install done!"
