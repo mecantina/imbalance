@@ -42,7 +42,7 @@ if [ $COUNT -eq 0 ]; then
     echo "# eccodes-${VERSION} support added by imbalance" >>~/.bashrc
     echo "if [ -d ~/eccodes-${VERSION} ]; then" >>~/.bashrc
     echo "export PATH=~/eccodes-${VERSION}/bin:$PATH  # Make sure the tools are first in path" >>~/.bashrc
-    echo "export ECCODES_DIR=~/eccodes-${VERSION} # Make Python use the latest build"
+    echo "export ECCODES_DIR=~/eccodes-${VERSION} # Make Python use the latest build" >>~/.bashrc
     echo "fi" >>~/.bashrc
     # Do it right now too:-)
     export PATH=~/eccodes-${VERSION}/bin:$PATH
