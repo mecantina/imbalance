@@ -48,6 +48,11 @@ if [ $COUNT -eq 0 ]; then
     export PATH=~/eccodes-${VERSION}/bin:$PATH
     export ECCODES_DIR=~/eccodes-${VERSION}
 fi
+
+# Create Lib64 symbolic link
+echo "Creating symbolic link for lib64 references..."
+ln -s ~/eccodes-${VERSION}/lib ~/eccodes-${VERSION}/lib64
+
 echo "Deleting source..."
 rm -Rf ~/${ECCODES}-source
 echo "Install done!"
