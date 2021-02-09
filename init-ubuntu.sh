@@ -90,6 +90,6 @@ pip3 install -r ~/python-libraries.txt
 #
 # Download the Install Miniconda file
 #
-rm install-miniconda.sh 2>/dev/null
-wget "${downloadUrlBase}/install-miniconda.sh"
-chmod +x install-miniconda.sh
+#rm install-miniconda.sh 2>/dev/null
+#wget "${downloadUrlBase}/install-miniconda.sh"
+#chmod +x install-miniconda.sh
