@@ -26,7 +26,7 @@ mkdir ~/${ECCODES}
 cd ~/${ECCODES}-source
 
 # Download source
-wget  https://confluence.ecmwf.int/download/attachments/45757960/eccodes-${VERSION}-Source.tar.gz
+wget --no-check-certificate https://confluence.ecmwf.int/download/attachments/45757960/eccodes-${VERSION}-Source.tar.gz
 tar -xvf eccodes-${VERSION}-Source.tar.gz
 
 # Build and install
