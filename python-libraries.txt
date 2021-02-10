@@ -2,6 +2,7 @@ azure-storage-blob
 azure-storage-file-datalake
 azure-identity
 azure-keyvault-secrets
+azure_mgmt_compute
 eccodes
 pyproj
 pygrib
