@@ -1,6 +1,7 @@
 azure-storage-blob
 azure-storage-file-datalake
 azure-identity
+azure_mgmt_compute
 azure-keyvault-secrets
 eccodes
 pyproj
