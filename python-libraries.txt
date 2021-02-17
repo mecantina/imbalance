@@ -10,4 +10,5 @@ pygrib
 python-dotenv
 matplotlib
 pandas
+pyodbc
 meimbalance
