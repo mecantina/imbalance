@@ -91,7 +91,26 @@ if [ $cnt -eq 0 ]; then
     cat export-display.sh >>~/.bashrc
     export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 fi
+#
+# Install SQL Server tools
+#
+echo "*****************************************************************************************"
+echo "* Installing SQL Server tools....                                                       *"
+echo "*****************************************************************************************"
 
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list >prod.list
+sudo mv prod.list /etc/apt/sources.list.d/mssql-release.list
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install msodbcsql17
+sudo ACCEPT_EULA=Y apt-get install mssql-tools
+sudo apt-get install unixodbc-dev
+cnt=$(cat ~/.bashrc | grep "MSSQL Tools added path" | wc -l)
+if [ $cnt -eq 0 ]; then 
+    echo "# MSSQL Tools added path" >> ~/.bashrc
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+    source ~/.bashrc 
+fi
 #
 # Installing python libraries
 #
