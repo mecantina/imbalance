@@ -35,7 +35,7 @@ sudo apt -y upgrade
 #
 # Install eccodes, x11-apps
 #
-sudo apt-get install -y libeccodes-dev gcc x11-apps make python3-pip xterm python3-tk libeccodes-tools cmake gfortran unixodbc-dev twine
+sudo apt-get install -y libeccodes-dev gcc x11-apps make python3-pip xterm python3-tk libeccodes-tools cmake gfortran unixodbc-dev twine cython
 #
 # Config GIT
 #
@@ -101,8 +101,8 @@ echo "**************************************************************************
 curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list >prod.list
 sudo mv prod.list /etc/apt/sources.list.d/mssql-release.list
 sudo apt-get update
-sudo ACCEPT_EULA=Y apt-get install msodbcsql17
-sudo ACCEPT_EULA=Y apt-get install mssql-tools
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
 sudo apt-get install -y unixodbc-dev
 cnt=$(cat ~/.bashrc | grep "MSSQL Tools added path" | wc -l)
 if [ $cnt -eq 0 ]; then 
