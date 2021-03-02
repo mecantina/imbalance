@@ -103,7 +103,7 @@ sudo mv prod.list /etc/apt/sources.list.d/mssql-release.list
 sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install msodbcsql17
 sudo ACCEPT_EULA=Y apt-get install mssql-tools
-sudo apt-get install unixodbc-dev
+sudo apt-get install -y unixodbc-dev
 cnt=$(cat ~/.bashrc | grep "MSSQL Tools added path" | wc -l)
 if [ $cnt -eq 0 ]; then 
     echo "# MSSQL Tools added path" >> ~/.bashrc
