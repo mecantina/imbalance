@@ -6,7 +6,6 @@ azure_mgmt_compute
 azure-keyvault-secrets
 azure_mgmt_compute
 eccodes
-pyproj
 pygrib
 python-dotenv
 matplotlib
