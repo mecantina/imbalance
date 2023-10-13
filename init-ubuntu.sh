@@ -117,6 +117,13 @@ fi
 echo "*****************************************************************************************"
 echo "* Installing python libraries...                                                        *"
 echo "*****************************************************************************************"
+cnt=$(cat ~/.bashrc | grep "Local bin added path" | wc -l)
+if [ $cnt -eq 0 ]; then 
+    echo "# Local bin added path" >> ~/.bashrc
+    echo 'export PATH="$PATH:~/.local/bin"' >> ~/.bash_profile
+    echo 'export PATH="$PATH:~/.local/bin"' >> ~/.bashrc
+    source ~/.bashrc 
+fi
 rm python-libraries.txt* 2>/dev/null
 wget "${downloadUrlBase}/python-libraries.txt"
 #/home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
