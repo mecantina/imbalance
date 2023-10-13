@@ -120,6 +120,7 @@ echo "**************************************************************************
 rm python-libraries.txt* 2>/dev/null
 wget "${downloadUrlBase}/python-libraries.txt"
 #/home/haakon/miniconda3/condabin/conda install -c conda-forge --file python-libraries.txt
+sudo apt install python3-pip
 python3 -m pip install -U pip
 pip3 install -r ~/python-libraries.txt
 #
